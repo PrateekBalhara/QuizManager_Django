@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% csrf_token %}
+{% block content %}
+     <form class="ui form" name="form" action="{% url 'quiz' quiz_id %}" method="POST">
+        {% csrf_token %}
+        <h4 class="ui dividing header">Quiz {{ quiz_id }}</h4>
+        <div class="ui padded grid">
+            {% for question in questions %}
+            <div class="ten wide column">
+                <div style="width:90%" class="ui padded card">
+                    <div style="width:90%" class="grouped fields">
+                    <label for="{{question.id}}_{{ forloop.counter }}_{{question.answer}}">
+                        Q{{ forloop.counter }}: {{ question.statement}}</label>
+                    <div class="field">
+                        {% for option in question.options_as_list %}
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="{{quiz_id}}_{{ question.id }}"
+                                       value="{{question.id}}_{{ forloop.counter }}_{{question.answer}}" tabindex="1" >
+                                <label>
+                                    {{ forloop.counter }}.  {{ option }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+        <button class="ui submit button" type="submit" value="quiz">Submit</button>
+    </form>
+{% endblock %}

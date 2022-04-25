@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .footer{
+             position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--    Header-->
+    <div class="ui header">
+        <div class="ui container">
+            <div class="ui grid">
+                <div class="fourteen wide column">
+                    Quiz
+                </div>
+                <div class="two wide column">
+                    <i class="user icon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+    </div>
+
+<!--    Main Body-->
+    <Segment style="overflow:'auto', maxHeight: 200, padding: 20">
+    {% block content %}
+    {% endblock %}
+    </Segment>
+<!--    Footer-->
+    <div class="ui footer">
+        <div class="ui divider"></div>
+        <div class="ui container">
+            <div class="ui horizontal list">
+                <div class="item">
+                    <h5>Final Project By: </h5>
+                </div>
+                <div class="item">
+                    <i class="users icon"></i>  Arjun: c0782784
+                </div>
+                <div class="item">
+                    <i class="users icon"></i>  Attit: c0834657
+                </div>
+                <div class="item">
+                    <i class="users icon"></i>  Prateek: c0830002
+                </div>
+                <div class="item">
+                    <i class="users icon"></i>  Sushil: c0839099
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% csrf_token %}
+{% block content %}
+    <div class="ui grid">
+        {% for result in results %}
+        <div class="five wide column ">
+            <div class="ui padded card">
+                <b>Quiz Topic: {{result.quiz}}</b>
+                <b> Score: {{result.score}}% <br></b>
+                Time: {{result.entry_time}} <br>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<!--    View Results-->
+    <button class="ui padded primary button">
+        <a href="{% url 'results' %}" style="color:white;">View Results</a>
+    </button>
+<!--All quiz topics-->
+    <div class="ui very padded grid">
+        {% for quiz in quizes %}
+        <div class="eight wide column">
+            <div class="ui cards">
+                  <div class="card">
+                    <div class="content">
+                      <div class="header">
+                        {{ quiz.topic | capfirst }}
+                      </div>
+                      <div class="meta">
+                        Duration: {{ quiz.duration }} minutes
+                      </div>
+                      <div class="description">
+                        AVERAGE: {{ quiz.avg }}%<br>
+                        HIGHEST: {{ quiz.max }}%<br>
+                        LOWEST: {{ quiz.min }}%
+                      </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui basic green button">
+                            <a href="{% url 'quiz' quiz.id %}">Take Quiz</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+

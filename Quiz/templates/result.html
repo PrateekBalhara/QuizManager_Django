@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <h3 style="position:'center';">{{ message }}</h3>
+        {% if retake %}
+        <button class="ui primary button">
+            <a href="{% url 'quiz' quiz_id %}" style="color:white;">Retake Quiz</a>
+        </button>
+        {% endif %}
+    </div>
+{% endblock %}
